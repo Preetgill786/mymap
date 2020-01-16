@@ -16,10 +16,7 @@ class ViewController: UIViewController, MKMapViewDelegate {
     
     
     var locatonSingle = Map()
-//      var mTitle = ""
-//         var mSubTitle = ""
-//         var mLatitude = 0.0
-//         var mLongitude = 0.0
+
     var locationDataArray = [Map]()
     
     @IBOutlet weak var mapView: MKMapView!
@@ -29,7 +26,7 @@ class ViewController: UIViewController, MKMapViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         mapView.delegate = self
-        // Do any additional setup after loading the view.
+       
     }
     
     func setPins() {
@@ -100,13 +97,7 @@ class ViewController: UIViewController, MKMapViewDelegate {
                 pinView.canShowCallout = true
                 pinView.rightCalloutAccessoryView = rightButton
                 
-                let leftButton = UIButton(type: .close)
-                leftButton.tag = annotation.hash
-                leftButton.addTarget(self, action: #selector(deleteBtnPressed), for: .touchDown)
-                pinView.animatesDrop = true
-                pinView.canShowCallout = true
-                pinView.leftCalloutAccessoryView = leftButton
-
+    
                 return pinView
             }
             else {
@@ -135,18 +126,7 @@ class ViewController: UIViewController, MKMapViewDelegate {
             }
             
         }
-        @objc func deleteBtnPressed(){
-            self.view.layoutIfNeeded()
-            for i in 0..<self.locationDataArray.count{
-                           if(self.locationDataArray[i].subTitle ==  ((selectPinView?.subtitle)!)){
-                               self.deleteRecord(location: self.locationDataArray[i])
-                               
-                               self.setPins()
-                               break
-                           }
-                       }
-         
-        }
+
      
         func insertRecord(title:String, subTitle:String,latitude: Double,longitude: Double){
             
@@ -172,13 +152,7 @@ class ViewController: UIViewController, MKMapViewDelegate {
                   return arrLocation
               }
 
-              func deleteRecord( location : Map){
-                ViewController.managedContext.delete(location)
-                try! ViewController.managedContext.save()
-              }
-              
-          
-        
+
     }
 
 
