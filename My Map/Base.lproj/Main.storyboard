@@ -243,7 +243,7 @@
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
                                         <state key="normal" title="Delete"/>
                                         <connections>
-                                            <action selector="delete:" destination="rPP-Er-lSu" eventType="touchUpInside" id="cBJ-R0-Sg1"/>
+                                            <action selector="dltBtn:" destination="rPP-Er-lSu" eventType="touchUpInside" id="nvD-sB-TbD"/>
                                         </connections>
                                     </button>
                                 </subviews>

@@ -23,6 +23,9 @@ class UpdateViewController: UIViewController {
     }
      var locMap = Map()
     
+    @IBAction func dltBtn(_ sender: Any) {
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         

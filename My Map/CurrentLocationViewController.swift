@@ -39,21 +39,18 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
     @IBAction func donebtn(_ sender: UIButton) {
         self.saveBtn.isEnabled = true
 
-               let tt = tTitle.text
-               let st = subTitle.text
-               let lt = latitude.text
-               let lgt = longititude.text
+
                
-                self.fetchAndUpdateTable()
-               mTitle = tt!
-               mSubTitle =  st!
-               mLatitude =  Double(lt!)!
-               mLongitude =  Double(lgt!)!
+                self.fetchAndUpdate()
+               mTitle = tTitle.text!
+               mSubTitle =  subTitle.text!
+               mLatitude =  Double(latitude.text!)!
+               mLongitude =  Double(longititude.text!)!
                
               self.insertRecord(title: mTitle, subTitle: mSubTitle, latitude: mLatitude, longitude: mLongitude)
-                self.fetchAndUpdateTable()
+                self.fetchAndUpdate()
                self.view.setNeedsLayout()
-              // self.tableView.reloadData()
+             
         
     }
     
@@ -78,7 +75,7 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
        refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
    refreshControl.addTarget(self, action: #selector(refresh), for: UIControl.Event.valueChanged)
 //           tableView.addSubview(refreshControl)
-         fetchAndUpdateTable()
+         fetchAndUpdate()
 
              
        }
@@ -88,7 +85,7 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
            
             self.refreshControl.endRefreshing()
         }
-        func fetchAndUpdateTable(){
+        func fetchAndUpdate(){
                locArry = fetchRecords()
                pinsArry = locArry
 

@@ -16,10 +16,10 @@ class ViewController: UIViewController, MKMapViewDelegate {
     
     
     var locatonSingle = Map()
-      var mTitle = ""
-         var mSubTitle = ""
-         var mLatitude = 0.0
-         var mLongitude = 0.0
+//      var mTitle = ""
+//         var mSubTitle = ""
+//         var mLatitude = 0.0
+//         var mLongitude = 0.0
     var locationDataArray = [Map]()
     
     @IBOutlet weak var mapView: MKMapView!
