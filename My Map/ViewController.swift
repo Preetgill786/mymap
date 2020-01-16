@@ -42,7 +42,7 @@ class ViewController: UIViewController, MKMapViewDelegate {
         
         var pinPoint = [MKPointAnnotation]()
         
-       // locationDataArray = fetchRecords()
+        locationDataArray = fetchRecords()
            mapView.removeAnnotations(mapView.annotations)
         for i in 0..<locationDataArray.count{
             let annotation = MKPointAnnotation()
@@ -61,7 +61,7 @@ class ViewController: UIViewController, MKMapViewDelegate {
             self.mapView.showAnnotations(self.mapView.annotations, animated: true)
             
             pinPoint.append(annotation)
-            //  mapView.addAnnotation(annotation)
+              mapView.addAnnotation(annotation)
         }
         mapView.addAnnotations(pinPoint)
         
@@ -75,7 +75,7 @@ class ViewController: UIViewController, MKMapViewDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
            super.viewWillAppear(animated)
-         //  setPins()
+         setPins()
        }
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
        
@@ -83,6 +83,102 @@ class ViewController: UIViewController, MKMapViewDelegate {
            selectPinView = view.annotation
     }
     
-    
-}
+       func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+            
+           // selectPinView = annotation
+            
+           // print("Selected == \(selectPinView.title)")
+            if !(annotation is MKUserLocation) {
+                
+                let pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: String(annotation.hash))
+
+                
+                let rightButton = UIButton(type: .infoDark)
+                rightButton.tag = annotation.hash
+                rightButton.addTarget(self, action: #selector(annoBtnPressed), for: .touchDown)
+                pinView.animatesDrop = true
+                pinView.canShowCallout = true
+                pinView.rightCalloutAccessoryView = rightButton
+                
+                let leftButton = UIButton(type: .close)
+                leftButton.tag = annotation.hash
+                leftButton.addTarget(self, action: #selector(deleteBtnPressed), for: .touchDown)
+                pinView.animatesDrop = true
+                pinView.canShowCallout = true
+                pinView.leftCalloutAccessoryView = leftButton
+
+                return pinView
+            }
+            else {
+                return nil
+            }
+        }
+        
+        @objc func annoBtnPressed(){
+            self.view.layoutIfNeeded()
+            
+            if let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "UpdateViewController") as? UpdateViewController {
+                       
+                       
+                       for i in 0..<self.locationDataArray.count{
+                           if(self.locationDataArray[i].subTitle ==  ((selectPinView?.subtitle)!) ){
+                               self.locatonSingle = self.locationDataArray[i]
+                               break
+                           }}
+                    viewController.locMap = self.locatonSingle
+                       
+                       
+                       if let navigator1 = self.navigationController {
+                           navigator1.pushViewController(viewController, animated: true)
+                       }
+      
+            }
+            
+        }
+        @objc func deleteBtnPressed(){
+            self.view.layoutIfNeeded()
+            for i in 0..<self.locationDataArray.count{
+                           if(self.locationDataArray[i].subTitle ==  ((selectPinView?.subtitle)!)){
+                               self.deleteRecord(location: self.locationDataArray[i])
+                               
+                               self.setPins()
+                               break
+                           }
+                       }
+         
+        }
+     
+        func insertRecord(title:String, subTitle:String,latitude: Double,longitude: Double){
+            
+            let location = Map(context: ViewController.managedContext)
+               
+                     location.title = title
+                     location.subTitle = subTitle
+                     location.latitude = latitude
+                     location.longitude = longitude
+                     
+            try! ViewController.managedContext.save()
+                 }
+           
+           func fetchRecords() -> [Map]{
+              var arrLocation = [Map]()
+              let fetchRequest = NSFetchRequest<Map>(entityName: "Map")
+              
+                  do{
+                    arrLocation = try ViewController.managedContext.fetch(fetchRequest)
+                  }catch{
+                      print(error)
+                  }
+                  return arrLocation
+              }
+
+              func deleteRecord( location : Map){
+                ViewController.managedContext.delete(location)
+                try! ViewController.managedContext.save()
+              }
+              
+          
+        
+    }
+
 

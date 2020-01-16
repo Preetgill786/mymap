@@ -89,24 +89,8 @@
                                             </textField>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="2dt-sb-8Ab">
-                                        <rect key="frame" x="0.0" y="108" width="394" height="34"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Longititude:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AhK-7Y-JGX">
-                                                <rect key="frame" x="0.0" y="0.0" width="192" height="34"/>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CvH-HC-qwW">
-                                                <rect key="frame" x="202" y="0.0" width="192" height="34"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
-                                        </subviews>
-                                    </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Vwh-l5-gRf">
-                                        <rect key="frame" x="0.0" y="162" width="394" height="34"/>
+                                        <rect key="frame" x="0.0" y="108" width="394" height="34"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="Latitude:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rb1-6y-ZU5">
                                                 <rect key="frame" x="0.0" y="0.0" width="194.5" height="34"/>
@@ -116,6 +100,22 @@
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lwB-Pt-pcI">
                                                 <rect key="frame" x="199.5" y="0.0" width="194.5" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="2dt-sb-8Ab">
+                                        <rect key="frame" x="0.0" y="162" width="394" height="34"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Longititude:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AhK-7Y-JGX">
+                                                <rect key="frame" x="0.0" y="0.0" width="192" height="34"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CvH-HC-qwW">
+                                                <rect key="frame" x="202" y="0.0" width="192" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
@@ -154,9 +154,9 @@
                         <outlet property="doneBtn" destination="ubC-ru-2pa" id="Mko-By-VeZ"/>
                         <outlet property="latitude" destination="lwB-Pt-pcI" id="HLy-R1-fwE"/>
                         <outlet property="longititude" destination="CvH-HC-qwW" id="oeU-zu-Lna"/>
-                        <outlet property="mTitle" destination="bdq-51-6WL" id="eGc-Dg-f2v"/>
                         <outlet property="saveBtn" destination="7qx-Fi-mxR" id="0ag-r6-5MR"/>
                         <outlet property="subTitle" destination="FhI-cS-BRV" id="U7m-6q-Rsr"/>
+                        <outlet property="tTitle" destination="bdq-51-6WL" id="R0o-ge-B22"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zKU-rG-4al" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -166,7 +166,7 @@
         <!--UpdateViewController-->
         <scene sceneID="EiU-lS-EHx">
             <objects>
-                <viewController title="UpdateViewController" id="rPP-Er-lSu" customClass="UpdateViewController" customModule="My_Map" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="UpdateViewController" title="UpdateViewController" id="rPP-Er-lSu" customClass="UpdateViewController" customModule="My_Map" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pC6-6V-RId">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -206,24 +206,8 @@
                                             </textField>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="gZX-b9-VY2">
-                                        <rect key="frame" x="0.0" y="108" width="374" height="34"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Longititude:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NFb-vi-e1h">
-                                                <rect key="frame" x="0.0" y="0.0" width="182" height="34"/>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0gu-6Z-20S">
-                                                <rect key="frame" x="192" y="0.0" width="182" height="34"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
-                                        </subviews>
-                                    </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Qe2-pU-M48">
-                                        <rect key="frame" x="0.0" y="162" width="374" height="34"/>
+                                        <rect key="frame" x="0.0" y="108" width="374" height="34"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="Latitude:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ac-yD-RJb">
                                                 <rect key="frame" x="0.0" y="0.0" width="184.5" height="34"/>
@@ -238,10 +222,29 @@
                                             </textField>
                                         </subviews>
                                     </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="gZX-b9-VY2">
+                                        <rect key="frame" x="0.0" y="162" width="374" height="34"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Longititude:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NFb-vi-e1h">
+                                                <rect key="frame" x="0.0" y="0.0" width="182" height="34"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0gu-6Z-20S">
+                                                <rect key="frame" x="192" y="0.0" width="182" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zah-pA-wmY">
                                         <rect key="frame" x="0.0" y="216" width="374" height="36"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
                                         <state key="normal" title="Delete"/>
+                                        <connections>
+                                            <action selector="delete:" destination="rPP-Er-lSu" eventType="touchUpInside" id="cBJ-R0-Sg1"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -255,8 +258,18 @@
                         <viewLayoutGuide key="safeArea" id="Vs9-fd-sxh"/>
                     </view>
                     <navigationItem key="navigationItem" title="Update Map" id="bCS-Sd-MFn">
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="EUn-hU-43L"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="EUn-hU-43L">
+                            <connections>
+                                <action selector="doneBtn:" destination="rPP-Er-lSu" id="UUB-Zf-IYS"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="latitudeText" destination="O5d-a5-iZo" id="KSS-cY-ZZY"/>
+                        <outlet property="longititudeText" destination="0gu-6Z-20S" id="mpF-i2-jhK"/>
+                        <outlet property="subTitleText" destination="lGo-Bo-BO9" id="mt5-Fg-iJz"/>
+                        <outlet property="titleText" destination="wjK-WH-Ftn" id="x25-xg-n6I"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tdH-wt-upJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

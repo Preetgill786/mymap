@@ -23,6 +23,7 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
        var locArry = [Map]()
        var pinsArry = [Map]()
  
+   
     @IBOutlet weak var tTitle: UITextField!
     @IBOutlet weak var subTitle: UITextField!
   
