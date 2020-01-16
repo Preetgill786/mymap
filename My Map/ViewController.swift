@@ -11,7 +11,8 @@ import CoreData
 import MapKit
 
 class ViewController: UIViewController, MKMapViewDelegate {
-static var  managedContext: NSManagedObjectContext!
+ 
+    static var  managedContext: NSManagedObjectContext!
     
     @IBOutlet weak var mapView: MKMapView!
     

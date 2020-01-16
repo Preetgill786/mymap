@@ -73,13 +73,13 @@
 				9B7491E923D09D2E00E83CA5 /* AppDelegate.swift */,
 				9B7491EB23D09D2E00E83CA5 /* SceneDelegate.swift */,
 				9B74920523D0D1BD00E83CA5 /* MyMapModel.xcdatamodeld */,
+				9B74920323D0CB9300E83CA5 /* CoreDataStack.swift */,
 				9B7491ED23D09D2E00E83CA5 /* ViewController.swift */,
 				9B7491EF23D09D2E00E83CA5 /* Main.storyboard */,
 				9B7491F223D09D2F00E83CA5 /* Assets.xcassets */,
 				9B7491F423D09D2F00E83CA5 /* LaunchScreen.storyboard */,
 				9B7491F723D09D2F00E83CA5 /* Info.plist */,
 				9B7491FD23D09F1200E83CA5 /* CurrentLocationViewController.swift */,
-				9B74920323D0CB9300E83CA5 /* CoreDataStack.swift */,
 				9B74920C23D0D4BA00E83CA5 /* UpdateViewController.swift */,
 			);
 			path = "My Map";

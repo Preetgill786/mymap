@@ -128,6 +128,9 @@
                                         <state key="normal" title="Done">
                                             <color key="titleShadowColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                         </state>
+                                        <connections>
+                                            <action selector="donebtn:" destination="24Q-w6-hOG" eventType="touchUpInside" id="G5x-yd-0nb"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -251,6 +254,9 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="doneBtn" destination="ubC-ru-2pa" id="Mko-By-VeZ"/>
+                        <outlet property="latitude" destination="lwB-Pt-pcI" id="HLy-R1-fwE"/>
+                        <outlet property="longititude" destination="CvH-HC-qwW" id="oeU-zu-Lna"/>
                         <outlet property="mTitle" destination="bdq-51-6WL" id="eGc-Dg-f2v"/>
                         <outlet property="subTitle" destination="FhI-cS-BRV" id="U7m-6q-Rsr"/>
                     </connections>

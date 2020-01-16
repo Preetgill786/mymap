@@ -18,13 +18,20 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
     @IBOutlet weak var mTitle: UITextField!
     @IBOutlet weak var subTitle: UITextField!
   
-  
+    @IBOutlet weak var longititude: UITextField!
+    @IBOutlet weak var latitude: UITextField!
+    @IBOutlet weak var doneBtn: UIButton!
+    
     @IBAction func save(_ sender: UIBarButtonItem) {
         self.navigationController?.popToRootViewController(animated: true)
     }
     
-   
-    @IBOutlet weak var getButton: UIButton!
+    @IBAction func donebtn(_ sender: UIButton) {
+        
+        
+    }
+    
+    
     
   
     
@@ -37,3 +44,5 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
     
     
 }
+
+
