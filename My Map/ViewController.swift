@@ -7,14 +7,26 @@
 //
 
 import UIKit
+import CoreData
+import MapKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, MKMapViewDelegate {
+static var  managedContext: NSManagedObjectContext!
+    
+    @IBOutlet weak var mapView: MKMapView!
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        mapView.delegate = self
         // Do any additional setup after loading the view.
     }
-
+    
+    override func viewWillAppear(_ animated: Bool) {
+           super.viewWillAppear(animated)
+         //  setPins()
+       }
 
 }
 

@@ -14,6 +14,11 @@
 		9B7491F323D09D2F00E83CA5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B7491F223D09D2F00E83CA5 /* Assets.xcassets */; };
 		9B7491F623D09D2F00E83CA5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B7491F423D09D2F00E83CA5 /* LaunchScreen.storyboard */; };
 		9B7491FE23D09F1200E83CA5 /* CurrentLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7491FD23D09F1200E83CA5 /* CurrentLocationViewController.swift */; };
+		9B74920423D0CB9300E83CA5 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B74920323D0CB9300E83CA5 /* CoreDataStack.swift */; };
+		9B74920723D0D1BD00E83CA5 /* MyMapModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9B74920523D0D1BD00E83CA5 /* MyMapModel.xcdatamodeld */; };
+		9B74920A23D0D26900E83CA5 /* Map+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B74920823D0D26900E83CA5 /* Map+CoreDataClass.swift */; };
+		9B74920B23D0D26900E83CA5 /* Map+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B74920923D0D26900E83CA5 /* Map+CoreDataProperties.swift */; };
+		9B74920D23D0D4BA00E83CA5 /* UpdateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B74920C23D0D4BA00E83CA5 /* UpdateViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +31,11 @@
 		9B7491F523D09D2F00E83CA5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9B7491F723D09D2F00E83CA5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9B7491FD23D09F1200E83CA5 /* CurrentLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentLocationViewController.swift; sourceTree = "<group>"; };
+		9B74920323D0CB9300E83CA5 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		9B74920623D0D1BD00E83CA5 /* MyMapModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MyMapModel.xcdatamodel; sourceTree = "<group>"; };
+		9B74920823D0D26900E83CA5 /* Map+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Map+CoreDataClass.swift"; sourceTree = "<group>"; };
+		9B74920923D0D26900E83CA5 /* Map+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Map+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		9B74920C23D0D4BA00E83CA5 /* UpdateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,14 +68,19 @@
 		9B7491E823D09D2E00E83CA5 /* My Map */ = {
 			isa = PBXGroup;
 			children = (
+				9B74920923D0D26900E83CA5 /* Map+CoreDataProperties.swift */,
+				9B74920823D0D26900E83CA5 /* Map+CoreDataClass.swift */,
 				9B7491E923D09D2E00E83CA5 /* AppDelegate.swift */,
 				9B7491EB23D09D2E00E83CA5 /* SceneDelegate.swift */,
+				9B74920523D0D1BD00E83CA5 /* MyMapModel.xcdatamodeld */,
 				9B7491ED23D09D2E00E83CA5 /* ViewController.swift */,
 				9B7491EF23D09D2E00E83CA5 /* Main.storyboard */,
 				9B7491F223D09D2F00E83CA5 /* Assets.xcassets */,
 				9B7491F423D09D2F00E83CA5 /* LaunchScreen.storyboard */,
 				9B7491F723D09D2F00E83CA5 /* Info.plist */,
 				9B7491FD23D09F1200E83CA5 /* CurrentLocationViewController.swift */,
+				9B74920323D0CB9300E83CA5 /* CoreDataStack.swift */,
+				9B74920C23D0D4BA00E83CA5 /* UpdateViewController.swift */,
 			);
 			path = "My Map";
 			sourceTree = "<group>";
@@ -141,10 +156,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B74920B23D0D26900E83CA5 /* Map+CoreDataProperties.swift in Sources */,
+				9B74920423D0CB9300E83CA5 /* CoreDataStack.swift in Sources */,
+				9B74920D23D0D4BA00E83CA5 /* UpdateViewController.swift in Sources */,
 				9B7491EE23D09D2E00E83CA5 /* ViewController.swift in Sources */,
+				9B74920723D0D1BD00E83CA5 /* MyMapModel.xcdatamodeld in Sources */,
 				9B7491FE23D09F1200E83CA5 /* CurrentLocationViewController.swift in Sources */,
 				9B7491EA23D09D2E00E83CA5 /* AppDelegate.swift in Sources */,
 				9B7491EC23D09D2E00E83CA5 /* SceneDelegate.swift in Sources */,
+				9B74920A23D0D26900E83CA5 /* Map+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,6 +360,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		9B74920523D0D1BD00E83CA5 /* MyMapModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				9B74920623D0D1BD00E83CA5 /* MyMapModel.xcdatamodel */,
+			);
+			currentVersion = 9B74920623D0D1BD00E83CA5 /* MyMapModel.xcdatamodel */;
+			path = MyMapModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 9B7491DE23D09D2E00E83CA5 /* Project object */;
 }
