@@ -14,9 +14,9 @@ class ViewController: UIViewController, MKMapViewDelegate {
   var selectPinView: MKAnnotation!
     static var  managedContext: NSManagedObjectContext!
     
-    
+    //single location
     var locatonSingle = Map()
-
+// array of locations
     var locationDataArray = [Map]()
     
     @IBOutlet weak var mapView: MKMapView!
@@ -48,7 +48,7 @@ class ViewController: UIViewController, MKMapViewDelegate {
             locValue.longitude = locationDataArray[i].longitude
             
             annotation.coordinate = locValue
-            mapView.isZoomEnabled = false
+            
             
          
             
@@ -58,7 +58,7 @@ class ViewController: UIViewController, MKMapViewDelegate {
             self.mapView.showAnnotations(self.mapView.annotations, animated: true)
             
             pinPoint.append(annotation)
-              mapView.addAnnotation(annotation)
+            //  mapView.addAnnotation(annotation)
         }
         mapView.addAnnotations(pinPoint)
         
@@ -74,17 +74,17 @@ class ViewController: UIViewController, MKMapViewDelegate {
            super.viewWillAppear(animated)
          setPins()
        }
+    
+    
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
        
-           
+           //for selected pin
            selectPinView = view.annotation
     }
-    
+//for popup
        func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
             
-           // selectPinView = annotation
-            
-           // print("Selected == \(selectPinView.title)")
+           
             if !(annotation is MKUserLocation) {
                 
                 let pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: String(annotation.hash))
@@ -93,9 +93,9 @@ class ViewController: UIViewController, MKMapViewDelegate {
                 let rightButton = UIButton(type: .infoDark)
                 rightButton.tag = annotation.hash
                 rightButton.addTarget(self, action: #selector(annoBtnPressed), for: .touchDown)
-                pinView.animatesDrop = true
-                pinView.canShowCallout = true
-                pinView.rightCalloutAccessoryView = rightButton
+                pinView.animatesDrop = true  //for animation
+                pinView.canShowCallout = true // showing the location detail message
+            pinView.rightCalloutAccessoryView = rightButton  // for showing detail nd going to another page
                 
     
                 return pinView
@@ -104,13 +104,13 @@ class ViewController: UIViewController, MKMapViewDelegate {
                 return nil
             }
         }
-        
+        // for  detail
         @objc func annoBtnPressed(){
             self.view.layoutIfNeeded()
-            
+            // going to update page
             if let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "UpdateViewController") as? UpdateViewController {
                        
-                       
+                       //loop on subtitle to access the location data
                        for i in 0..<self.locationDataArray.count{
                            if(self.locationDataArray[i].subTitle ==  ((selectPinView?.subtitle)!) ){
                                self.locatonSingle = self.locationDataArray[i]
@@ -127,18 +127,6 @@ class ViewController: UIViewController, MKMapViewDelegate {
             
         }
 
-     
-        func insertRecord(title:String, subTitle:String,latitude: Double,longitude: Double){
-            
-            let location = Map(context: ViewController.managedContext)
-               
-                     location.title = title
-                     location.subTitle = subTitle
-                     location.latitude = latitude
-                     location.longitude = longitude
-                     
-            try! ViewController.managedContext.save()
-                 }
            
            func fetchRecords() -> [Map]{
               var arrLocation = [Map]()

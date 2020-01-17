@@ -10,6 +10,8 @@ import UIKit
 
 class UpdateViewController: UIViewController {
     
+     var locMap = Map()
+    
     @IBOutlet weak var titleText: UITextField!
     @IBOutlet weak var subTitleText: UITextField!
     @IBOutlet weak var longititudeText: UITextField!
@@ -21,7 +23,7 @@ class UpdateViewController: UIViewController {
         
         self.navigationController?.popToRootViewController(animated: true)
     }
-    var locMap = Map()
+   
     
     @IBAction func dltBtn(_ sender: Any) {
         deleteRecord(location: locMap)
@@ -43,16 +45,14 @@ class UpdateViewController: UIViewController {
         longititudeText.text = locMap.longitude.description
         latitudeText.text = locMap.latitude.description
         
-        // Do any additional setup after loading the view.
+      
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        //ViewController.managedContext = coreDataStack.managedContext
-        
+       
         
     }
-    
     
     
     func updateRecord(location:Map,title:String,subTitle:String,latitude: Double,longitude: Double){
